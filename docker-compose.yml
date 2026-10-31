@@ -1,0 +1,14 @@
+services:
+  postgres:                          # nom du service (on choisit)
+    image: postgres:16               # l'image officielle Postgres, version 16
+    environment:                     # variables lues par Postgres au 1er démarrage
+      POSTGRES_DB: velib             #   → crée une base "velib"
+      POSTGRES_USER: velib           #   → avec cet utilisateur
+      POSTGRES_PASSWORD: velib       #   → et ce mot de passe (local uniquement !)
+    ports:
+      - "5433:5432"                  # port_de_ton_PC:port_dans_le_conteneur
+    volumes:
+      - postgres-data:/var/lib/postgresql/data   # les données survivent au conteneur
+
+volumes:
+  postgres-data:                     # déclaration du volume nommé
