@@ -1,0 +1,15 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# dbt
+dbt/velib/target/
+dbt/velib/logs/
+dbt/velib/dbt_packages/
+dbt/velib/.user.yml
+
+# Airflow
+logs/
